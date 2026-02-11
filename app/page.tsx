@@ -1,3 +1,4 @@
+import { MarqueeDemo } from "@/components/ui/demo";
 import { BGPattern } from "@/components/ui/bg-pattern";
 import { ThemeToggleSwitch } from "@/components/ui/theme-toggle-switch";
 
@@ -23,6 +24,9 @@ export default function Home() {
     {
       name: "Math Formula Detection & LaTeX Recognition",
       type: "Computer vision pipeline",
+      image:
+        "https://github.com/debabrataghoosh/Mathematical-Formula-Detector/blob/main/screenshots/view-extracted-formulas.png?raw=1",
+      imageAlt: "Developer working on code with a math visualization.",
       description:
         "Built a two-stage pipeline combining YOLOv5 detection with a Transformer sequence model for LaTeX generation, achieving 89% precision and 82% recall on ICDAR datasets.",
       tags: ["Python", "PyTorch", "YOLOv5", "Transformers"],
@@ -30,6 +34,9 @@ export default function Home() {
     {
       name: "Emotion Detector – Speech Emotion Recognition",
       type: "Deep learning application",
+      image:
+        "https://github.com/debabrataghoosh/emotion_detection_app/blob/main/static/ed.png?raw=1",
+      imageAlt: "Audio waveform on a screen with headset nearby.",
       description:
         "Trained a multi-class speech emotion model on 1,400+ RAVDESS samples, reaching 79%+ accuracy with MFCC features and a 3-layer neural network.",
       tags: ["TensorFlow", "Flask", "Librosa", "Streamlit"],
@@ -37,6 +44,9 @@ export default function Home() {
     {
       name: "AgroTrade – Agri Trading Platform",
       type: "Full-stack platform",
+      image:
+        "https://github.com/debabrataghoosh/AgroTrade-fullstack-project/blob/main/public/assets/ss.png?raw=1",
+      imageAlt: "A farmer holding produce in a field.",
       description:
         "Built a Next.js SSR platform with REST APIs and real-time messaging, cutting load time by 35% and improving retention by 20%.",
       tags: ["Next.js", "Socket.io", "Clerk", "REST APIs"],
@@ -44,6 +54,9 @@ export default function Home() {
     {
       name: "CineRank – Modern Movies & People Discovery Platform",
       type: "React + TMDB experience",
+      image:
+        "https://github.com/debabrataghoosh/movie-review-platfrom/blob/main/public/mm.png?raw=1",
+      imageAlt: "Cinema seats facing a screen.",
       description:
         "Shipped a glassmorphic movie, TV, and people discovery app with progressive reveal sections, advanced filters, and Clerk-authenticated personalization backed by TMDB data.",
       tags: ["React", "Tailwind CSS", "TMDB API", "Clerk"],
@@ -233,28 +246,38 @@ export default function Home() {
               Request demos
             </a>
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="flex flex-col gap-6">
             {projects.map((project) => (
               <article
                 key={project.name}
-                className="flex h-full flex-col justify-between rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6"
+                className="flex w-full flex-col gap-6 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 md:flex-row"
               >
-                <div>
-                  <p className="text-sm text-[color:var(--muted-2)]">{project.type}</p>
-                  <h3 className="mt-3 text-xl font-semibold">{project.name}</h3>
-                  <p className="mt-4 text-sm text-[color:var(--muted)]">
-                    {project.description}
-                  </p>
+                <div className="h-full overflow-hidden rounded-2xl border border-[color:var(--border)] md:w-5/12">
+                  <img
+                    alt={project.imageAlt}
+                    src={project.image}
+                    className="h-52 w-full object-cover md:h-full"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted-2)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="flex flex-1 flex-col justify-between">
+                  <div>
+                    <p className="text-sm text-[color:var(--muted-2)]">{project.type}</p>
+                    <h3 className="mt-3 text-2xl font-semibold">{project.name}</h3>
+                    <p className="mt-4 text-sm text-[color:var(--muted)]">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted-2)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
@@ -290,6 +313,21 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section id="stack" className="space-y-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[color:var(--muted-2)]">
+                Tech stack
+              </p>
+              <h2 className="text-3xl font-semibold">Tools I build with.</h2>
+            </div>
+            <div className="rounded-full border border-[color:var(--border)] px-4 py-2 text-sm text-[color:var(--muted)]">
+              2026-ready stack
+            </div>
+          </div>
+          <MarqueeDemo />
         </section>
 
         <section className="space-y-8">

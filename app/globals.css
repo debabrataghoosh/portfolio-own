@@ -1,3 +1,4 @@
+@config "../tailwind.config.js";
 @import "tailwindcss";
 
 :root {
@@ -9,6 +10,8 @@
   --surface: #ffffff;
   --surface-muted: rgba(0, 0, 0, 0.05);
   --pattern: rgba(0, 0, 0, 0.22);
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 .dark {
@@ -20,6 +23,8 @@
   --surface: #0b0b0b;
   --surface-muted: rgba(255, 255, 255, 0.06);
   --pattern: rgba(255, 255, 255, 0.22);
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 @theme inline {
