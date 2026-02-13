@@ -154,18 +154,17 @@ export default function Home() {
       </header>
 
       <main className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-24">
-        <section className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <section className="grid items-center gap-10">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[color:var(--muted-2)]">
               AI/ML Engineer + Full-Stack Developer
             </p>
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-              Building intelligent products with practical, scalable engineering.
+              Building intelligent products.
             </h1>
             <p className="text-lg text-[color:var(--muted)]">
-              I design and ship ML-powered experiences across computer vision,
-              speech emotion recognition, and full-stack platforms. My focus is
-              on measurable impact, reliable systems, and delightful user flows.
+              ML-driven experiences across vision, speech, and full-stack
+              systems. Focused on impact, reliability, and clean UX.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -180,28 +179,6 @@ export default function Home() {
               >
                 Contact me
               </a>
-            </div>
-          </div>
-          <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-[color:var(--muted-2)]">Current focus</p>
-                <p className="text-xl font-semibold">AI/ML + Full-stack systems</p>
-              </div>
-              <span className="rounded-full bg-[color:var(--surface-muted)] px-3 py-1 text-xs font-semibold text-[color:var(--muted)]">
-                Open to opportunities
-              </span>
-            </div>
-            <div className="mt-8 grid gap-6">
-              {highlights.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center justify-between rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-5 py-4"
-                >
-                  <p className="text-sm text-[color:var(--muted-2)]">{item.label}</p>
-                  <p className="text-2xl font-semibold text-[color:var(--foreground)]">{item.value}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -375,18 +352,22 @@ export default function Home() {
             </p>
             <h2 className="text-3xl font-semibold">Academic foundation.</h2>
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="relative space-y-8 after:absolute after:left-3 after:top-0 after:bottom-0 after:w-px after:bg-[color:var(--border)]">
             {education.map((item) => (
-              <article
-                key={`${item.school}-${item.period}`}
-                className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6"
-              >
-                <h3 className="text-lg font-semibold">{item.school}</h3>
-                <p className="mt-2 text-sm text-[color:var(--muted)]">{item.detail}</p>
-                <p className="mt-4 text-xs uppercase tracking-[0.25em] text-[color:var(--muted-2)]">
-                  {item.location}
-                </p>
-                <p className="mt-2 text-sm text-[color:var(--muted)]">{item.period}</p>
+              <article key={`${item.school}-${item.period}`} className="relative pl-12">
+                <span className="absolute left-3 top-1/2 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[color:var(--border)] bg-[color:var(--background)]">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--foreground)]" />
+                </span>
+                <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-5">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h3 className="text-lg font-semibold">{item.school}</h3>
+                    <span className="text-sm text-[color:var(--muted-2)]">{item.period}</span>
+                  </div>
+                  <p className="mt-2 text-sm text-[color:var(--muted)]">{item.detail}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.25em] text-[color:var(--muted-2)]">
+                    {item.location}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
